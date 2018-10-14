@@ -19,7 +19,7 @@ export class Provider extends Component {
         axios.get(`http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${a}`)
         .then(res => {
             this.setState({track_list:res.data.message.body.track_list})
-            console.log(this.state.track_list);
+            // console.log(this.state.track_list);
         })
         .catch(err => console.log(err));
     }
