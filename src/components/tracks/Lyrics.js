@@ -14,10 +14,10 @@ class Lyrics extends Component {
     componentDidMount() {
         let a = process.env.REACT_APP_MM_KEY;
 
-        axios.get(`http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${this.props.match.params.id}&apikey=${a}`)
+        axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${this.props.match.params.id}&apikey=${a}`)
         .then(res => {
             this.setState({lyrics:res.data.message.body.lyrics})
-            return axios.get(`http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=${this.props.match.params.id}&apikey=${a}`);
+            return axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=${this.props.match.params.id}&apikey=${a}`);
         })
         .then(res => {
             this.setState({track:res.data.message.body.track})
