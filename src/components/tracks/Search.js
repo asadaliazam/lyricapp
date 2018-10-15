@@ -11,7 +11,7 @@ import { Consumer } from '../../context';
     findTrack = (dispatch, e) => {
         e.preventDefault();
         let a = process.env.REACT_APP_MM_KEY;
-        axios.get(`http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.trackTitle}&page_size=5&page=1&s_track_rating=desc&apikey=${a}`)
+        axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.trackTitle}&page_size=5&page=1&s_track_rating=desc&apikey=${a}`)
         .then(res => {
             // this.setState({track_list:res.data.message.body.track_list})
             // console.log(res.data);

@@ -30,7 +30,7 @@ export class Provider extends Component {
 
        let a = process.env.REACT_APP_MM_KEY;
 
-        axios.get(`http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${a}`)
+        axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${a}`)
         .then(res => {
             this.setState({track_list:res.data.message.body.track_list})
             // console.log(this.state.track_list);
